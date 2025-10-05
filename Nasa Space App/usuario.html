@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipe - SpaceApp</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            overflow: hidden;
+        }
+
+        /* --- VÍDEO DE FUNDO --- */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* --- BOTÕES REDONDOS DE MARTE --- */
+        .button-marte {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: none;
+            background-image: url("marte.png"); /* sua imagem do planeta */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            text-shadow: 1px 1px 3px black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease-in-out;
+            text-decoration: none;
+            cursor: pointer;
+            position: fixed;
+            z-index: 1000;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+            background-color: transparent;
+        }
+
+        /* Efeito ao passar o mouse */
+        .button-marte:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- Botão ESQUERDA (Início) --- */
+        .btn-esquerda {
+            top: 20px;
+            left: 30px;
+        }
+
+        /* --- Botão DIREITA (Voltar) --- */
+        .btn-direita {
+            top: 20px;
+            right: 30px;
+        }
+
+        /* --- CONTEÚDO CENTRAL --- */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container img {
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+        }
+
+        .legenda {
+            margin-top: 20px;
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: rgb(245, 240, 230);
+            text-shadow: 1px 1px 6px black;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- VÍDEO DE FUNDO -->
+    <video autoplay muted loop class="video-background">
+        <source src="download.mp4" type="video/mp4">
+    </video>
+
+    <!-- CONTEÚDO CENTRAL -->
+    <div class="container">
+        <img src="fotogrupo.jpg" alt="Foto do grupo">
+        <p class="legenda">Team ReOrbit 6 — Revolutionizing Recycling on Mars</p>
+    </div>
+
+    <!-- BOTÕES DE MARTE -->
+    <button class="button-marte btn-esquerda" value="Mais Informações" onclick="irParaInicio()">Start</button>
+    <button class="button-marte btn-direita" value="Mais Informações" onclick="irParaVoltar()">To go back</button>
+
+    <!-- SCRIPT JS -->
+    <script>
+        function irParaInicio() {
+            window.location.href = "NASA.html";
+        }
+
+        function irParaVoltar() {
+            window.location.href = "NASA2.html";
+        }
+    </script>
+
+</body>
+</html>
