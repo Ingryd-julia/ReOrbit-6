@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca - BlackMusic</title>
+
+    <style>
+        .cabecalho{
+            display: flex;
+            height: 20vh;
+            align-items: center;
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            padding: 10px;
+            width: 100vw;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            width: 100vw;
+            align-items: center;
+        }
+        nav .logo{
+            margin-left: 4vw;
+            cursor: default;
+
+        }
+        nav .logo2{
+            margin-right: 2vw;
+            cursor: default;
+
+        }
+        nav ul{
+            list-style: none;
+        }
+        nav ul li{
+            display: inline-block;
+        }
+        nav ul li a{ 
+            padding: 1.042vw 1.042vw; 
+            text-decoration: none; 
+            font-size: 1.7vw; 
+            color: rgb(255, 255, 255); 
+            border-radius: 30px; 
+            position: relative; 
+        } 
+            
+        nav ul li a::after{ 
+            content: " "; 
+            width: 0; 
+            height: 0.208vw; 
+            background-color: rgb(255, 251, 251); 
+            position: absolute; 
+            bottom: 0; 
+            left: 0; 
+        } 
+        
+        nav ul li a:hover::after{ 
+            width: 100%; 
+        }
+        nav .menu{
+            width: 62vw;
+            text-align: right;
+
+            
+        }.loginho{
+            width: 4.167vw;
+        }
+
+        body {
+            background-image: linear-gradient(to right, #61007d, rgb(0, 0, 0));
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        input[type=radio] {
+            display: none;
+        }
+
+        nav ul li a.active::after {
+            content: " ";
+            width: 100%;
+            height: 0.6vh;
+            background-color: rgb(255, 251, 251);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        input[type=radio] {
+            display: none;
+        }
+
+        .carrossel {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .card {
+            position: absolute;
+            width: 8%;
+            min-width: 77%;
+            height: 120%;
+            min-height: 100%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transition: transform 0.4s ease;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            max-width: 24%;
+            max-height: 50vh;
+            display: flex;
+            transform-style: preserve-3d;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 3.75vh;
+        }
+
+        .cards {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin-bottom: 2vh;
+        }
+
+        #item-1:checked~.cards #song-3,
+        #item-2:checked~.cards #song-1,
+        #item-3:checked~.cards #song-2 {
+            transform: translateX(-125%) scale(1);
+            opacity: 1;
+            z-index: 0;
+        }
+
+        #item-1:checked~.cards #song-2,
+        #item-2:checked~.cards #song-3,
+        #item-3:checked~.cards #song-1 {
+            transform: translateX(125%) scale(1);
+            opacity: 1;
+            z-index: 0;
+        }
+
+        #item-1:checked~.cards #song-1,
+        #item-2:checked~.cards #song-2,
+        #item-3:checked~.cards #song-3 {
+            transform: translateX(0) scale(1.2);
+            opacity: 1;
+            z-index: 1;
+        }
+
+        h1 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 2vw;
+            margin-top: -4vh;
+            margin-bottom: 3vh;
+        }
+
+        nav ul li a.active::after {
+            content: " ";
+            width: 100%;
+            height: 0.6vh;
+            background-color: rgb(255, 251, 251);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .card div {
+            font-family: 'Poppins', sans-serif;
+            align-items: center;
+            padding: 10%;
+            text-align: center;
+            padding-top: 10%;
+        }
+
+        .rec {
+            background-color: #b7441f;
+            width: 100%;
+            height: 100%;
+            border-radius: 2vh;
+            margin: auto;
+        }
+        .rec .die{
+            font-size: 1vw;
+        }
+
+        .listen {
+            background-color: #cc5029;
+            width: 100%;
+            height: 100%;
+            border-radius: 2vh;
+            margin: auto;
+        }
+
+        .ava {
+            background-color: #A64029;
+            height: 100%;
+            border-radius: 2vh;
+            margin: auto;
+        }
+
+        enunciado {
+            font-size: 1.2vw;
+        }
+
+        .die {
+            background-color: #A64029;
+            border-radius: 1.5vw;
+            margin-top: 0%;
+            margin-bottom: 2vh;
+            cursor: pointer;
+            position: relative;
+            width: 100%;
+            height: 27%;
+            font-size: 0.8vw;
+            align-items: left;
+            text-align: center;
+            justify-content: left;
+            display: flex;
+            padding: 6px;
+
+        }
+
+        .ava .die {
+            background-color: #55281d;
+            width: 100%;
+            margin-bottom: 3.5vh;
+            
+        }
+        .ava .musicas{
+            align-items: flex-start; /* Ajusta os itens dentro da lista */
+    text-align: left;
+        }
+
+        html ::-webkit-scrollbar {
+            width: 1.3vh;
+        }
+
+        .ava ::-webkit-scrollbar {
+            display: none;
+        }
+
+        html ::-webkit-scrollbar-thumb {
+            border-radius: 50px;
+            background: #a63829;
+        }
+
+        html ::-webkit-scrollbar-track {
+            background: #55281d;
+            border-radius: 30px;
+        }
+
+        .musicas {
+            height: 74%;
+            padding: 0%;
+            overflow-y: scroll;
+            gap: 0;
+            align-items: flex-start;
+            margin-top: 1vh;
+        }
+
+        .musicas .die img {
+            width: 40%;
+            height: 160%;
+            object-fit: contain;
+            float: left;
+        }
+
+        .ava .musicas .die img {
+            width: 25%;
+            height: 300%;
+            object-fit: contain;
+            float: left;
+        }
+
+        .botao input {
+            margin: auto;
+            width: 10.5vw;
+            padding: 0.7vw;
+            border-radius: 20px;
+            background-color: #b7441f;
+            border-color: #55281d;
+            color: white;
+            font-size: 1vw;
+            border: 0;
+        }
+
+        .listen .botao input {
+            margin: auto;
+            width: 10.5vw;
+            padding: 0.7vw;
+            border-radius: 20px;
+            background-color: #9b3b35;
+            border-color: #55281d;
+            color: white;
+            font-size: 1vw;
+            border: 0;
+        }
+
+        .rec .botao input {
+            margin: auto;
+            width: 10.5vw;
+            padding: 0.7vw;
+            border-radius: 20px;
+            background-color: #9b3b35;
+            border-color: #55281d;
+            color: white;
+            font-size: 1vw;
+            border: 0;
+        }
+
+        .botao input:hover {
+            margin: auto;
+            padding: 0.7vw;
+            border-radius: 20px;
+            background-color: #461616;
+            border-color: #5a2d18;
+            color: white;
+            font-size: 1vw;
+            border: 0;
+            cursor: pointer;
+        }
+
+
+        .botao input:active {
+            margin: auto;
+            padding: 0.7vw;
+            border-radius: 20px;
+            background-color: #ffb7a5;
+            border-color: #55281d;
+            color: white;
+            font-size: 1vw;
+            box-shadow: none;
+            border: 0;
+        }
+        .button-item {
+    background-color: #9b3b35; /* Cor de fundo dos botões */
+    color: white;
+    padding: 30px; /* Ajustando o padding para deixar o botão mais alto */
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    width: 100%; /* Largura 100% para os botões tomarem toda a largura disponível */
+    text-align: left; /* Alinhando o texto e a imagem à esquerda */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Espaçamento entre os botões */
+    transition: background-color 0.3s ease;
+}
+
+.button-item img {
+    width: 30px; /* Tamanho da imagem ajustado */
+    height: auto;
+    margin-left: 15px; /* Adicionando espaço à esquerda da imagem */
+    margin-right: 20px; /* Adicionando espaço à direita da imagem */
+}
+
+.button-item:hover {
+    background-color: #55281d; /* Cor mais escura ao passar o mouse */
+}
+
+.button-item:active {
+    background-color: #9b3b35; /* Cor mais escura quando pressionado */
+}
+
+
+        .cantores{
+            font-size: 0.6vw;
+            line-height: 0.2;
+            text-align: left;
+            display: flex;
+            align-items: flex-start;
+        }
+        .trem{
+            font-size: 1.2vw;
+            font-style: bold;
+            text-align: left;
+            display: flex;
+            align-items: flex-start;
+        }
+        .coisa{
+            width: 90%;
+            text-align: left;
+            align-items: left;
+            padding-left: 0;
+            margin-left: 0;
+            line-height: 0;
+        }
+        .video-background { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100vw; 
+            height: 100vh; 
+            object-fit: cover; 
+            z-index: -1;
+           } 
+           .button-marte {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: none;
+            background-image: url("marte.png"); /* sua imagem do planeta */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            text-shadow: 1px 1px 3px black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease-in-out;
+            text-decoration: none;
+            cursor: pointer;
+            position: fixed;
+            z-index: 1000;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+            background-color: transparent;
+        }
+
+        /* Efeito ao passar o mouse */
+        .button-marte:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- Botão ESQUERDA (Início) --- */
+        .btn-esquerda {
+            top: 20px;
+            left: 30px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <video autoplay muted loop class="video-background">
+        <source src="download.mp4" type="video/mp4">
+    </video>
+
+    <div class="cabecalho">
+        <nav>
+            <div class="logo">
+
+            </div>
+            <div class="menu"></div>
+            <div class="logo2">
+                <span><a href="usuario.html"><img class="loginho" src="sombra-de-usuario-masculino (1).png"></a></span>
+                <button class="button-marte btn-esquerda" value="Mais Informações" onclick="irParaInicio()">Start</button>
+            </div>
+        </nav>
+    </div>
+
+    <h1></h1>
+    <div class="container">
+        <input type="radio" name="slider" id="item-1" checked>
+        <input type="radio" name="slider" id="item-2">
+        <input type="radio" name="slider" id="item-3">
+        <div class="cards">
+            <label class="card" for="item-1" id="song-1">
+
+                <div class="rec">
+                    <enunciado>PROPOSAL</enunciado><br>
+                    <hr>
+                    <div class="musicas">
+                        An External Support Structure (ESTU) is a structure built outside the astronauts' habitat that can be used for various purposes, including workshop and storage 
+                        (the use will depend on the astronauts' needs and available resources). The ESTU was developed for the useful utilization of the three-dimensional cubic structure, 
+                        material recycled after the inflatable habitat is inflated and secured, to create a new space that serves as support for astronauts to perform tasks, missions, and life in space more efficiently and sustainably.
+
+                    </div>
+                    <div class="botao" style="padding-top: 2vh;">
+                        <input type="button" value="More information" onclick="maisInformacoes()">
+                    </div>
+                </div>
+            </label>
+
+            <label class="card" for="item-2" id="song-2">
+                <div class="listen">
+                    <enunciado>materials used</enunciado><br>
+                    <hr>
+                    <div class="musicas">
+                        <div class="die">
+                            <img src="aluminio.webp" class="mais1" align="center">
+                            Aluminum
+                        </div>
+                        <div class="die">
+                            <img src="lona.webp" class="mais1" align="center">
+                            Tarpaulin
+                        </div>
+                        <div class="die">
+                            <img src="poetileno.jpg" class="mais1" align="center">
+                            Polyethylene
+                        </div>
+                        <div class="die">
+                            <img src="plasticobolha.jpg" class="mais1" align="center">
+                            bubble wrap
+                        </div>
+                        <div class="die">
+                            <img src="almofadaAr.jpg" class="mais1" align="center">
+                            air cushion
+                        </div>
+                        <div class="die">
+                            <img src="polymer.png" class="mais1" align="center">
+                            polymer
+                        </div>
+                        <div class="die">
+                            <img src="nylon.webp" class="mais1" align="center">
+                           Nylon
+                        </div>
+                        <div class="die">
+                            <img src="Polyester.jpg" class="mais1" align="center">
+                           Polyester
+                        </div>
+                        <div class="die">
+                            <img src="algodao.webp" class="mais1" align="center">
+                           cotton fabric
+                        </div>
+                        <div class="die">
+                            <img src="cloth.jpg" class="mais1" align="center">
+                            Cloth
+                        </div>
+                        <div class="die">
+                            <img src="PMC.jpg" class="mais1" align="center">
+                            Polymer Matrix composites (PMC's)
+                        </div>
+                        <div class="die">
+                            <img src="CargoTransferbags.webp" class="mais1" align="center">
+                            Cargo transfer bags (CTB's)
+                        </div>
+                    </div>
+                    
+                </div>
+            </label>
+
+            <label class="card" for="item-3" id="song-3">
+                <div class="listen">
+                    <enunciado>3D Models</enunciado><br>
+                    <hr>
+                    <div class="musicas">
+                        <button class="button-item" onclick="mostrarModelo3D1()">
+                          
+                            ESTU
+                        </button>
+                        <button class="button-item" onclick="mostrarModelo3D2()">
+
+                            CTB
+                        </button>
+                        <button class="button-item" onclick="mostrarModelo3D3()">
+                        
+                            PMC
+                        </button>
+                    </div>
+
+                </div>
+            </label>
+            
+    </div>
+
+    
+
+    <script>
+         function irParaInicio() {
+            window.location.href = "NASA.html";
+        }
+        function vaiMusicas() {
+            window.location.href = "video";
+        }
+
+        function maisInformacoes() {
+            window.location.href = "vermais.html";
+        }
+
+        function mostrarModelo3D1() {
+            window.location.href = "ESTU.mp4";
+        }function mostrarModelo3D2() {
+            window.location.href = "CTB.mp4";
+        }function mostrarModelo3D3() {
+            window.location.href = "PMC.mp4";
+        }
+        const currentLocation = window.location.href;
+        const menuItems = document.querySelectorAll("nav ul li a");
+        menuItems.forEach(item => {
+            if (item.href === currentLocation) {
+                item.classList.add("active");
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início - Reciclagem em Marte</title>
+
+    <style>
+        /* Cabeçalho */
+        .cabecalho {
+            display: flex;
+            height: 20vh;
+            align-items: center;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+            width: 100vw;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            width: 100vw;
+            align-items: center;
+        }
+
+        nav .logo {
+            margin-left: 4vw;
+            cursor: default;
+        }
+
+        nav .logo2 {
+            margin-right: 2vw;
+            cursor: default;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            padding: 1.042vw 1.042vw;
+            text-decoration: none;
+            font-size: 1.7vw;
+            color: rgb(255, 255, 255);
+            border-radius: 30px;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: " ";
+            width: 0;
+            height: 0.208vw;
+            background-color: rgb(255, 251, 251);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        nav .menu {
+            width: 62vw;
+            text-align: right;
+        }
+
+        .loginho {
+            width: 4.167vw;
+        }
+
+        /* Vídeo de fundo */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Corpo */
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            overflow: hidden;
+        }
+
+        /* Container principal */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 5vw;
+            margin-top: 15vh;
+        }
+
+        h1 {
+            font-size: 6vw;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 4vw;
+            margin: 0;
+            color: rgb(200, 200, 200);
+        }
+
+        /* Área dos botões */
+        .botoes {
+            display: flex;
+            gap: 30px; /* distância entre os botões */
+            margin-top: 25px;
+        }
+
+        /* Botões redondos */
+        .button-marte {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            background-image: url("marte.png");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            text-shadow: 1px 1px 3px black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease-in-out;
+            text-decoration: none;
+            background-color: transparent
+        }
+
+        .button-marte:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <div class="cabecalho">
+        <nav>
+            <div class="logo">
+                <span></span>
+            </div>
+            <div class="menu"></div>
+            <div class="logo2">
+                <span><a href="usuario.html"><img class="loginho" src="sombra-de-usuario-masculino (1).png"></a></span>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Vídeo de fundo -->
+    <video autoplay muted loop class="video-background">
+        <source src="download.mp4" type="video/mp4">
+    </video>
+
+    <!-- Conteúdo principal -->
+    <div class="container">
+        <h1>Revolutionizing</h1>
+        <h2>Recycling on Mars</h2>
+
+        <!-- Botões lado a lado -->
+        <div class="botoes">
+            <button class="button-marte btn-esquerda" value="Mais Informações" onclick="irProximo()">Discover</button>
+            <button class="button-marte btn-esquerda" value="Mais Informações" onclick="irParaInicio()">Pitch</button>
+
+        </div>
+    </div>
+
+    <script>
+        function irParaInicio() {
+           window.location.href = "https://youtu.be/VFQXRxvhvFE?si=-LbRryrvh7irp2pJ";
+       }
+       function irProximo() {
+           window.location.href = "NASA2.html";
+       }
+
+    
+       const currentLocation = window.location.href;
+       const menuItems = document.querySelectorAll("nav ul li a");
+       menuItems.forEach(item => {
+           if (item.href === currentLocation) {
+               item.classList.add("active");
+           }
+       });</script>
+</body>
+</html>

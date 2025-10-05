@@ -1,0 +1,155 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reciclagem em Marte - SpaceApp</title>
+
+    <style>
+        /* --- CONFIGURAÇÃO GERAL --- */
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            overflow: hidden;
+        }
+
+        /* --- VÍDEO DE FUNDO --- */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1; /* fica atrás de tudo */
+        }
+
+        /* --- BOTÕES --- */
+        .button-marte {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            background-image: url("marte.png");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            text-shadow: 1px 1px 3px black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease-in-out;
+            text-decoration: none;
+            position: fixed;
+            z-index: 9999; /* garante que fique visível acima de tudo */
+        }
+
+        .button-marte:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- Botão VOLTAR (direita) --- */
+        .btn-direita {
+            top: 20px;
+            right: 30px;
+        }
+
+        /* --- Botão INÍCIO (esquerda) --- */
+        .btn-esquerda {
+            top: 20px;
+            left: 30px;
+        }
+
+        /* --- CONTAINER CENTRAL --- */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            text-align: center;
+            padding-top: 60px;
+        }
+
+        /* --- TÍTULOS --- */
+        h1 {
+            font-size: 4vw;
+            margin: 0;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        /* --- CAIXA DE TEXTO COM ROLAGEM --- */
+        .texto {
+            max-width: 1300px;
+            max-height: 600px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 25px;
+            border-radius: 15px;
+            line-height: 1.6;
+            font-size: 1.1em;
+            text-align: justify;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            overflow-y: auto;
+        }
+
+        .texto::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .texto::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 10px;
+        }
+
+        .texto p {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- VÍDEO DE FUNDO -->
+    <video autoplay muted loop class="video-background">
+        <source src="download.mp4" type="video/mp4">
+    </video>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="container">
+        <h1>Proposal</h1>
+
+        <div class="texto">
+           <p>Our project aims to tackle one of humanity's greatest problems, which has been faced for centuries: the waste of important resources. 
+            We seek to solve this problem during a space mission to Mars. How? Building types of tents for storage, as the mission lasts about 3 years, 
+            36 months, and the one-way trip can vary from 7 to 9 months, waste is inevitable, and our mission is to use it in a recyclable way, generating less unnecessary expenses during it. ESTU 
+        </p> 
+
+        <p>
+            Our project aims to tackle one of humanity's greatest challenges: the waste of essential resources. The proposal is to optimize the use of materials during a space mission to Mars, utilizing 
+            waste generated throughout the process. The mission, lasting about three years, inevitably generates waste. Our solution consists of repurposing materials that would be discarded by constructing 
+            external structures to the habitat. The ESTU (External Support Structure), as it is called, Our project aims to reduce waste, ensuring greater efficiency in resource use. In a world where space 
+            exploration is growing exponentially, it is necessary to establish ways to prevent the increase of waste in space, thus solidifying humanity's commitment to sustainability in the cosmos.
+        </p>
+
+        
+        
+        
+        
+        
+        </div>
+    </div>
+
+    <!-- BOTÃO ESQUERDA (INÍCIO) -->
+    <a href="NASA.html"  value="Início" class="button-marte btn-esquerda">Start</a>
+
+    <!-- BOTÃO DIREITA (VOLTAR) -->
+    <a href="NASA2.html" value="Voltar" class="button-marte btn-direita">To go back</a>
+
+</body>
+</html>
